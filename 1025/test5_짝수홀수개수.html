@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!--
+    정수가 담긴 리스트 num_list가 주어질 때, num_list의 원소 중 짝수와 홀수의 개수를 담은 배열을 return 하도록 solution 함수를 완성해보세요.
+  -->
+</body>
+
+<script>
+function solution(num_list) {
+    let jjack = 0;
+    let hol = 0;
+    num_list.forEach(ele => {
+        if(ele % 2 == 0){
+            jjack+=1;
+        }else{
+            hol+=1;
+        }
+    })
+    return [jjack,hol]
+}
+
+solution([1, 2, 3, 4, 5]);
+solution([1, 3, 5, 7]);
+
+// 다른사람 풀이 ( 인상깊어서 ㅠ )
+function solutionB(num_list) {
+    var answer = [0,0];
+
+    for(let a of num_list){
+        answer[a%2] += 1
+    }
+
+    return answer;
+}
+
+
+solutionB([1, 2, 3, 4, 5]);
+solutionB([1, 3, 5, 7]);
+
+</script>
+</html> 
