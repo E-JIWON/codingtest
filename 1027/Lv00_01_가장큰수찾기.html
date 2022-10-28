@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="EUC-KR">
+  <title>가장 큰 수 찾기</title>
+</head>
+<body>
+  
+</body>
+<script>
+  function solution(array) {
+    let maxNum = 0;
+    let maxInx = 0;
+    array.forEach((ele, inx)=>{
+        if(maxNum < ele) {
+            maxNum = ele;
+            maxInx = inx
+        }
+    });
+    return [maxNum, maxInx]
+  }
+
+  // 다른사람 풀이
+  // Math
+  function solutionB(array) {
+    return [Math.max(...array), array.indexOf(Math.max(...array))]
+  }
+</script>
+</html>

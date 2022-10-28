@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">device-width, initial-scale=1.0">
+  <title>모음제거</title>
+</head>
+<body>
+  
+</body>
+<script>
+  //내 풀이
+  function solution(my_string) {
+    var answer = '';
+    let myStringArray = [...my_string]
+
+    myStringArray.forEach(ele => {
+        if(ele != 'a' && ele != 'e' && ele != 'i' && ele != 'o' && ele != 'u'){
+            answer+=ele
+        }
+    })
+    console.log(answer)
+
+    return answer;
+  }
+
+  //다른사람 풀이
+  function solution(my_string) {
+    return my_string.replace(/[aeiou]/g, '');
+  }
+
+</script>
+</html>
