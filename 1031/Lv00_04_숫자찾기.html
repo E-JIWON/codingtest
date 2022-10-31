@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>숫자 찾기</title>
+</head>
+<body>
+  정수 num과 k가 매개변수로 주어질 때, 
+  num을 이루는 숫자 중에 k가 있으면 num의 그 숫자가 있는 자리 수를 return하고 
+  없으면 -1을 return 하도록 solution 함수를 완성해보세요.
+</body>
+<script>
+  //내 풀이 
+  function solution(num, k) {
+    let a = [...num+""].findIndex(ele => { return k == ele }); 
+    return  a >= 0 ? a+1 : a
+  }
+
+  //다른사람 풀이
+  function solutionB(num, k) {
+    let i = (num+"").indexOf(k);
+    return i === -1 ? -1 : i+1;
+  }
+  solution(29183, 1)
+</script>
+</html>

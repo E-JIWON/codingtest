@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>가위바위보</title>
+</head>
+<body>
+  문자열 my_string과 정수 n이 매개변수로 주어질 때, 
+  my_string에 들어있는 각 문자를 n만큼 반복한 문자열을 return 하도록 solution 함수를 완성해보세요.
+</body>
+<script>
+  // 가위는 2 바위는 0 보는 5
+
+  //내 풀이
+  function solution(rsp) {
+    return [...rsp].map(ele => {
+        return ele == "0" ? "5" : ele  == "2" ? "0" : "2"
+    }).join("");
+  }
+
+  //다른사람 풀이
+  function solutionB(rsp) {
+    let arr = {
+      2: 0,
+      0: 5,
+      5: 2
+    };
+    var answer = [...rsp].map(v => arr[v]).join("");
+    return answer;
+  }
+</script>
+</html>
