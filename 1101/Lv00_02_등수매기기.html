@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>등수 매기기</title>
+</head>
+<body>
+  영어 점수와 수학 점수의 평균 점수를 기준으로 학생들의 등수를 매기려고 합니다. 
+  
+  영어 점수와 수학 점수를 담은 2차원 정수 배열 score가 주어질 때, 
+  영어 점수와 수학 점수의 평균을 기준으로 매긴 등수를 담은 배열을 return하도록 solution 함수를 완성해주세요.
+</body>
+<script>
+  //내가 푼 풀이....
+  function solution(score) {
+    var answer = [];
+    let stNum = [];
+    let count = 1;
+
+    score.forEach((ele1, inx) => {
+      let tempNum = 0;
+
+      ele1.forEach(ele2 => {
+        tempNum+=ele2;
+      });
+
+      stNum.push(tempNum / 2);
+
+    });
+
+    stNum.forEach((num, inx) => {
+      stNum.forEach(ele3 => {
+        if(num < ele3){
+          count++
+          // console.log(count)
+        }
+      });
+      answer.push(count);
+      count=1;
+    });
+    return answer
+  }
+  console.log(solution(
+    [
+      [80, 70], [90, 50], [40, 70], [50, 80]
+    ]
+  ));
+  
+  //개인적으로 맘에드는 다른사람 풀이
+  function solutionB(score) {
+      const total = score.map(n => n[0] + n[1]);
+      const rank = [...total].sort((a, b) => b - a);
+      return total.map(n => rank.indexOf(n) + 1);
+  }
+  
+  console.log(solutionB(
+    [
+      [80, 70], [90, 50], [40, 70], [50, 80]
+    ]
+  ));
+
+
+</script>
+</html>
