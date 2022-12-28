@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>destructuring assignment</title>
+</head>
+<body>
+</body>
+<script>
+  const cookie = {
+    base : "cookie",
+    madeIn: "korea"
+  }
+  const chocochipCookie = {
+    ...cookie,
+    toping: "chocochip"
+  }
+  const blueberryCookie = {
+    ...cookie,
+    toping: "blueberry"
+  }
+  const strawberryCookie = {
+    ...cookie,
+    toping: "strawberry"
+  }
+
+  console.log(chocochipCookie);
+  // base :  "cookie"
+  // madeIn : "korea"
+  // toping : "chocochip"
+  
+</script>
+</html>

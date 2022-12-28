@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>callback</title>
+</head>
+<body>
+  
+</body>
+<script>
+  const person = {
+    name: "이지원",
+    age: 25,
+  };
+  person.location = "한국";
+  person["gender"] = "여성";
+  
+  person.name = "이지원 A";
+  person["age"] = 26;
+
+  // 값을 변경하는 행위가 있는데도 불구하고
+  // let person을 const person로 바꾸어도 오류가 나지 않음
+  // object를 수정하는 행위이지 person 자체를 변경하는 행위가 아니여서 오류가 안남
+
+  //? person이라는 상수 자체를 변경하는 행위란?
+  person = {
+    age: 20
+  } // 이게 오류남
+
+  // 객체의 프러퍼티는 추가, 수정이 가능함
+
+  // 프로퍼티 삭제 방법
+  delete person.age;
+  delete person["name"];
+  //실제로 메모리 연결을 지워지지 않음
+
+  //이 방법으로 지워야 메모리 X
+  person.name = null;
+  person["age"] = null;
+
+
+  console.log(person);
+</script>
+</html>

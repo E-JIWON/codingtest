@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>동기 비동기</title>
+</head>
+<body>
+  
+</body>
+<script>
+  function taskA(a, b, cb){
+    setTimeout(() => {
+      const res = a + b;
+      // 이 지역변수 res의 값을 쓰기 위해 cb(callback) 매개변수를 추가 함
+      cb(res);
+    }, 3000);
+  }
+
+  function taskB(a, cb){
+    setTimeout(() => {
+      const res = a * 2;
+      cb(res);
+    }, 1000)
+  };
+
+  function taskC(a, cb){
+    setTimeout(() => {
+      const res = 3* -1;
+      cb(res);
+    }, 2000);
+  }
+
+
+  taskA(3, 4, (res) => { //res의 결과값을 파라미터로 받음 
+    console.log("A task result", res);
+  });
+
+  taskB(7, (res) => {
+    console.log("B task result", res);
+  })
+  
+  taskC(4, (res) => {
+    console.log("C task result", res);
+  })
+  
+  console.log("코드 끝");
+</script>
+</html>

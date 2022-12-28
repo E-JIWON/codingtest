@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>callback</title>
+</head>
+<body>
+  
+</body>
+<script>
+  const person = {
+    name: "이지원",
+    age: 25,
+    say: function() {
+      console.log(`안녕나는 ${this.name}, ${this["age"]}살`);
+    } // 메서드 ->  방법 
+  };
+  person.say();
+  person["say"]();
+
+  console.log(person.gender); // undefined
+
+  //객체 안에 프로퍼티 존재여부 확인하는 방법
+  console.log(`name : ${"name" in person}`); // true
+  console.log(`gender : ${"gender" in false}`); // true
+  
+</script>
+</html>

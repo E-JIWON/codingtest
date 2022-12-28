@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>callback</title>
+</head>
+<body>
+  
+</body>
+<script>
+  const person = {
+    name: "이지원",
+    age: 25,
+    tall: 170
+  };
+  const personKeys = Object.keys(person);
+  //Object.keys 라는 메소드는 객체안에 키값들을 배열로 반환
+  const personValues = Object.values(person);
+  
+  for(let i = 0; i < personKeys.length; i++){
+    const curKey = personKeys[i];
+    const curValue = person[curKey];
+
+    console.log(`${curKey} ::::: ${curValue}`);
+    console.log("personValues ~~  : ", personValues[i]);
+  }
+
+  
+</script>
+</html>

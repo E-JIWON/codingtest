@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>단락회로평가</title>
+</head>
+<body>
+  
+</body>
+<script>
+  const getName = (person) =>{
+    if (!person) {
+      return "객체가 아닙니다"
+    }
+    return person.name;
+  }
+
+  let person;
+  const name = getName(person);
+  console.log(name)
+
+  // 결과 : 객체가 아닙니다
+
+  
+  const getName2 = (person2) =>{
+    return person2 && person2.name;
+  }
+
+  let person2;
+  const name2 = getName(person2);
+  console.log(name2)
+  
+  // 결과 : undefined
+  // person2가 펄슨이라 undefined가 나오고, person2.name은 아예 접근하지 않음 ! 
+
+
+  
+  const getName3 = (person3) =>{
+    const name = person3 && person3.name;
+    return name || "객체가 아닙니다"
+  }
+
+  let person3 = { name3 : "이지원" }; // 이지원
+  // let person3 = null;  -> 객체가 아닙니다.
+  const name3 = getName(person3);
+  console.log(name3)
+  
+  // 결과 : undefined
+  // person2가 펄슨이라 undefined가 나오고, person2.name은 아예 접근하지 않음 ! 
+
+
+
+
+
+</script>
+</html>

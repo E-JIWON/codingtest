@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>destructuring assignment</title>
+</head>
+<body>
+</body>
+<script>
+  let object = {
+    one : "one",
+    two : "two",
+    three : "three",
+
+    
+    one2 : "one22",
+    two2 : "two22",
+    three2 : "three22",
+    name : "이지원"
+  }
+
+  let one = object.one;
+  let two = object.two;
+  let three = object.three;
+
+  console.log(one, two, three);
+  
+  // ---------------------------------------
+  let {three2, one2, two2, name: myName} = object;
+  
+  console.log(one2, two2, three2, myName); // one22 two22 three22
+
+</script>
+</html>

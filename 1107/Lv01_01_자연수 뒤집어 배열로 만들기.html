@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+
+<script>
+  
+  //내 풀이
+  function solution(n) {
+    return [...n+""].map((a, b, c) => {
+        return Number(c[c.length-b-1])
+    });
+  }
+
+  //다른사람 풀이
+  // reverse라는 메소드를 잊고살았다
+  function solution(n) {
+      // 문자풀이
+      return (n+"").split("").reverse().map(v => parseInt(v));
+  }
+</script>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>callback</title>
+</head>
+<body>
+  
+</body>
+<script>
+  // 1. 객체 생성자 new
+  let person1 = new Object();
+  // 2. 객체 리터럴 방식 중괄호
+  let person2 = {
+    key : "value", // 키 : 값
+    key1 : "value2", // 이 키, 값들을 객체 프로퍼티라고 부름
+    key2 : true, // 키는 문자열로만 가능
+    key3 : undefined,
+    key4 : [1, 2],
+    key5 : function() {}
+  }
+  let person3 = {
+    name : "이지원",
+    age: 26
+  }
+  // 점 표기법
+  console.log(person2.key1);
+  // 괄호 표기법 - ["키를 꼭 문자열로 넣어서 사용"]
+  console.log(person2["key1"]);
+
+  console.log(person3.name); //이지원
+  console.log(person3.age);
+
+  //괄호표기법 사용 할 때
+  console.log(getPropertyValue["name"]);
+  
+  //괄호표기법 사용 할 때
+  function getPropertyValue(key){
+    return person3[key];
+  }
+
+
+</script>
+</html>

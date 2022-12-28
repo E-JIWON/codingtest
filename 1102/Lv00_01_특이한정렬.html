@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  정수 n을 기준으로 n과 가까운 수부터 정렬하려고 합니다. 
+  
+  이때 n으로부터의 거리가 같다면 더 큰 수를 앞에 오도록 배치합니다. 
+  
+  정수가 담긴 배열 numlist와 정수 n이 주어질 때 
+  numlist의 원소를 n으로부터 가까운 순서대로 정렬한 배열을 return하도록 solution 함수를 완성해주세요.
+</body>
+<script>
+  function solution(numlist, n) {
+    let reList = []
+    let countList = numlist.map(element => {
+      return Math.abs(element - n)
+    });
+    //[3, 2, 1, 0, 1, 2]
+    
+    let shortArr = [...countList].sort((a,b)=>a-b);
+    // [0, 1, 1, 2, 2, 3]
+
+    shortArr.forEach((num, inx) => {
+      //작은 숫자대로 indexOf를 찾아서 하고싶다
+
+      let finx = countList.indexOf(num)
+      let finx2 = countList.lastIndexOf(num)
+
+      
+      if(shortArr[inx] == shortArr[inx+1]){
+        //1과 1이 같을 경우 
+        //기존 배열[indexOf(num)] 비교
+        // 2 < 3 ? 3 : 2
+
+        numlist[finx] < numlist[finx2] ? reList.push(numlist[finx2]) : reList.push(numlist[finx])
+      }else if(shortArr[inx-1] == shortArr[inx]){
+          numlist[finx] > numlist[finx2] ? reList.push(numlist[finx]) : reList.push(numlist[finx2])
+      }else{
+        reList.push(numlist[finx])
+      }
+      console.log(reList)
+    });
+
+  }
+
+  console.log(solution([1, 2, 3, 4, 5, 6], 4));
+
+  // const rank = [...total].sort((a, b) => b - a);
+  // return total.map(n => rank.indexOf(n) + 1);
+
+  // 4에서 가까운 순으로 [4, 5, 3, 6, 2, 1]을 return합니다.
+  // 3과 5는 거리가 같으므로 더 큰 5가 앞에 와야 합니다.
+  // 2와 6은 거리가 같으므로 더 큰 6이 앞에 와야 합니다.
+</script>
+</html>

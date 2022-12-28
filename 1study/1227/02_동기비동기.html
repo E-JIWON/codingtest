@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>동기 비동기</title>
+</head>
+<body>
+  
+</body>
+<script>
+  function asyncAdd(a, b, cb){
+    setTimeout(() => {
+      const res = a + b;
+      cb(res); // cb는 콜백함수
+    }, 3000);
+  }
+  asyncAdd(1, 3, (res) => {
+    console.log("결과 : " . res)
+  })
+
+  //JS Engine
+  //mainContext
+  //asyncAdd()
+
+  //Web APIs에서 3초
+  //setTimont() - cb() 
+
+
+  //JS Engine에서 asyncAdd()가 제거
+  //Web APIs에서 3초 후에 실행 후 setTimeout 제거
+  //Callback Queue로 cb()함수가 옮겨짐
+
+  //EventLoop에 의해 call Stack 이동
+  //EventLoop는 Call Stack에 Main Context외 스택이 비어있는지 확인하는 애임
+
+</script>
+</html>
