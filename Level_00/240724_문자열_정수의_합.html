@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--
+      https://school.programmers.co.kr/learn/courses/30/lessons/181849
+
+      한 자리 정수로 이루어진 문자열 num_str이 주어질 때, 각 자리수의 합을
+      return하도록 solution 함수를 완성해주세요. 
+    -->
+  </body>
+
+  <script>
+    function solution(num_str) {
+      // 정수 문자열을 배열로 바꿈
+      const strArray = num_str.split("");
+      return strArray.reduce((acc, cur) => parseInt(acc) + parseInt(cur));
+    }
+
+    solution("123784123");
+  </script>
+</html>

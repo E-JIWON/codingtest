@@ -38,7 +38,10 @@
 
 #### 2024년 풀이
 
-> 1.
+> 1. [문자열 정수의 합](./Level_00/240724_문자열_정수의_합.html)
+>    / [문제 바로가기](https://school.programmers.co.kr/learn/courses/30/lessons/181849)
+> 2. [뒤에서 5등 뒤로](./Level_00/240724_뒤에서_5등_뒤로.html)
+>    / [문제 바로가기](https://school.programmers.co.kr/learn/courses/30/lessons/181852)
 
 ### Level 1
 
