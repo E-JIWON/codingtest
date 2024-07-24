@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--
+      https://school.programmers.co.kr/learn/courses/30/lessons/120812
+      
+      최빈값은 주어진 값 중에서 가장 자주 나오는 값을 의미합니다. 
+      정수 배열 array가 매개변수로 주어질 때, 최빈값을 return 하도록 solution 함수를 완성해보세요. 
+      최빈값이 여러 개면 -1을 return 합니다.
+    -->
+  </body>
+
+  <script>
+    // console.log("===============동일한 경우 ST===================");
+    // console.log("accumulator : ", accumulator);
+    // console.log("currentNumber : ", currentNumber);
+    // console.log("objectA : " , objectA);
+    // console.log("===============동일한 경우 EN===================");
+
+    // console.log("===============다른 경우 ST===================");
+    // console.log("accumulator : ", accumulator);
+    // console.log("currentNumber : ", currentNumber);
+    // console.log("objectA : " , objectA);
+    // console.log("===============다른 경우 EN===================");
+
+    function solution(array) {
+      let answer = 0;
+      let objectA = {};
+      let tempNum = 0;
+      array = array.sort((a, b) => a - b);
+
+      array.reduce((accumulator, currentNumber) => {
+        if (accumulator == currentNumber) {
+          objectA[currentNumber] = ++tempNum;
+
+          return accumulator;
+        } else {
+          tempNum = 1;
+          objectA[currentNumber] = tempNum;
+          return (accumulator = currentNumber);
+        }
+      }, array[0]);
+
+      let maxNum = Math.max(...Object.values(objectA));
+      let tempNum2 = 0;
+
+      for (const [key, value] of Object.entries(objectA)) {
+        if (maxNum == value) {
+          answer = key;
+          tempNum2++;
+        }
+      }
+      return tempNum2 === 1 ? Number(answer) : -1;
+    }
+
+    // console.log(solution([1, 2, 3, 3, 3, 4,4,4,4,4]));
+    // console.log(solution([1, 2, 3, 3, 3, 4]));
+    // console.log(solution([1, 1, 2, 2]));
+    console.log(
+      solution([1, 1, 2, 2, 3, 3, 44, 513, 314, 333, 333, 222, 222, 333, 333])
+    );
+  </script>
+</html>
